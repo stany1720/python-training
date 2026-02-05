@@ -412,5 +412,114 @@
 
 # print(d)
 
-patrate = {x: x**2 for x in range(5)}
-print(patrate)
+# patrate = {x: x**2 for x in range(5)}
+# print(patrate)
+
+
+# ______________________________________________________________________________________
+
+# str1 = 'ceva'
+# str2 = str1
+
+# print(id(str1))
+# print(id(str2))
+# # id - returneaza adresa de memorie
+# str2 = str2 + "incaceva"
+# print(id(str1))
+# print(id(str2))
+# lis1 = [1, 2, 3, 4]
+# lis2 = lis1
+# print(id(lis1))
+# print(id(lis2))
+# lis2[0] = 10
+# print(id(lis1))
+# print(id(lis2))
+# print(lis1)
+# print(lis2)
+# lis1 = [1, 2, 3, 4]
+# lis2 = lis1.copy
+
+# print(id(lis1))
+# print(id(lis2))
+# import copy
+# lis1 = [1, 2, [3, 4]]
+# lis2 = copy.deepcopy(lis1)
+# print(id(lis1))
+# print(id(lis2))
+# lis2[0] = 20
+# lis2[2][0] = 10
+# print(lis1)  # [1, 2, [10, 4]]
+# print(lis2)  # [20, 2, [10, 4]]
+# print(id(lis1[2]))
+# print(id(lis2[2]))
+
+# -----------------------------------------------------------------------------------
+
+# Functii: definire
+# Functii: apelare
+
+# def func_basic():  # In paranteza se pun parametri
+#     print('Salut din functie! ')
+#     return 120
+
+
+# print(func_basic())
+
+
+# def afisaza_nume(nume, prenume):
+#     print(f"Salut {nume} {prenume}!")
+
+
+# afisaza_nume('Stanislav', 'Mihai')
+
+# default value
+
+# def afisaza_nume(nume='Stanislav', prenume='Mihai'):
+#     print(f"Salut {nume} {prenume}!")
+
+
+# # pentru valori default,
+# # MEREU valoarea default este la final si parametrii trebuiesc atribuiti.
+# afisaza_nume('Ionescu')
+
+# def operatii(v1, v2):
+#     return v1 + v2, v1 - v2, v1 * v2
+
+
+# x, y, z = operatii(10, 20)
+# print(x, y, z)
+
+# VARIABILA_GLOBALA = "Ceva"
+
+# def functie_extra(p1, p2):
+#     global var
+#     var = p1 + p2
+#     print(var)
+
+
+# functie_extra(100, 200)
+
+# var += var
+# print(var)
+
+
+# Functii recursive: functie care se apeleaza pe ea insasi(necesita coditie de oprire)
+
+# lista = [1, 2, 3, [1, 3, 5], 6, [1, [1, 2], 3]]
+
+# lista_simpla = [1, 2, 3, 4, 5, 1, 7, 1]
+
+
+# def frecventa_nr(lista_in_care_caut, nr_cautat):
+#     counter = 0
+#     for nr in lista_in_care_caut:
+#         if isinstance(nr, list):
+#             counter += frecventa_nr(nr, nr_cautat)
+#         elif nr_cautat == nr:
+#             counter += 1
+#         else:
+#             pass
+#     return counter
+
+
+# print(frecventa_nr(lista_simpla, 1))

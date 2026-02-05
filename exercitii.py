@@ -1115,9 +1115,9 @@
 # 1) Creeaza un dictionar care sa contina numele si varsta a 5 persoane.
 
 
-import statistics  # pentru ex. 5
+# import statistics  # pentru ex. 5
 
-d1 = {'Adrian': 70, 'Doina': 67, 'Maria': 98, 'Mihai': 38, 'Madalina': 37}
+# d1 = {'Adrian': 70, 'Doina': 67, 'Maria': 98, 'Mihai': 38, 'Madalina': 37}
 
 # 2) Afiseaza varsta unei persoane specifificate de utilizator.
 
@@ -1132,12 +1132,12 @@ d1 = {'Adrian': 70, 'Doina': 67, 'Maria': 98, 'Mihai': 38, 'Madalina': 37}
 
 # 4) Adauga 3 noi persoane in dictionar.
 
-d1.update({'Alexandru': 18, 'Claudia': 25, 'Ioana': 32})
+# d1.update({'Alexandru': 18, 'Claudia': 25, 'Ioana': 32})
 # print(d1)
 
 # 5) Afiseaza varsta medie a persoanelor din dictionar.
 
-print(statistics.mean(d1.values()))
+# print(statistics.mean(d1.values()))
 
 # 6) Sterge o persoana specificata de utilizator din dictionar.
 
@@ -1186,7 +1186,7 @@ print(statistics.mean(d1.values()))
 
 # 13) Creeaza un nou dictionar care sa contina doar persoanele cu varsta peste 18 ani.
 
-d1.update({'Catalina': 10, 'Serban': 5, 'Razvan': 2, 'Alina': 32, 'Ion': 109})
+# d1.update({'Catalina': 10, 'Serban': 5, 'Razvan': 2, 'Alina': 32, 'Ion': 109})
 # print(d1)
 # d2 = {k: v for k, v in d1.items() if v >= 18}
 # print(d2)
@@ -1245,16 +1245,282 @@ d1.update({'Catalina': 10, 'Serban': 5, 'Razvan': 2, 'Alina': 32, 'Ion': 109})
 
 # 19) Se da urmatorul text: "Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani".
 #     Creeaza un dictionar care sa contina numele persoanelor ca si chei si varstele ca si valori.
-text = 'Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani'
+# text = 'Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani'
 
-d2 = {item.split(" are ")[0]: int(item.split(" are ")[
-    1].replace(" ani", "")) for item in text.split(", ")}
-print(d2)
+# d2 = {item.split(" are ")[0]: int(item.split(" are ")[
+#     1].replace(" ani", "")) for item in text.split(", ")}
+# print(d2)
 
 # 20) Se da urmatorul text: "Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani".
 #     Creeaza un dictionar care sa stocheze frecventa literelor din text si afiseaza-l. Exemplu: {'a': 7, 'n': 3, ... }.
 
-text = 'Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani'
+# text = 'Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani'
 
-d3 = {char: text.count(char) for char in text if char.isalpha()}
-print(d3)
+# d3 = {char: text.count(char) for char in text if char.isalpha()}
+# print(d3)
+
+# Exercitii Functii Python:
+# 1) Scrie o funcție care primește un nume și afișează "Salut, <nume>!".
+
+# def salut(nume):
+#     print(f"Salut {nume}")
+
+
+# salut("Mihai")
+
+# 2) Scrie o funcție care primește două numere și returnează suma lor.
+
+# def adunare(x, y):
+#     print(x + y)
+
+
+# adunare(5, 4)
+
+# 3) Scrie o funcție care primește două numere și returnează suma, diferența și produsul lor (returnează un tuple).
+
+# def calc(x, y):
+#     return (x + y, x - y, x * y)
+
+
+# rezultat = calc(5, 4)
+# print(rezultat)
+
+# 4) Scrie o funcție care primește un număr și returnează True dacă este par, altfel False.
+
+# def par(x):
+#     return x % 2 == 0
+
+
+# print(par(143))
+
+# 5) Scrie o functie care primeste ca parametru un numar si modifica valoarea unei variabile globale cu valoarea numarului la patrat.
+
+# X = 10
+# print(X)
+
+
+# def mod(y):
+#     global X
+#     X = y**2
+
+
+# mod(4)
+# print(X)
+
+# 5) Scrie o funcție care primește o listă de numere de la tastatura cu spatii si | și returnează suma tuturor numerelor.
+# # 1 | 3 | 4 | 6 | 9 | 75
+
+# def suma_numere(lista) :
+#     suma = 0
+#     for i in lista :
+#         suma+= i
+#     return suma
+
+# char = input("Introdu sirul")
+# numar_clar = char.split("|")
+# lista = [int(i.strip()) for i in numar_clar]
+# rezultat = suma_numere(lista)
+# print("Rezultatul este : ", rezultat)
+
+# 6) Scrie o funcție care primește un string și returnează stringul inversat.
+
+# def inverter():
+#     string = input('Please provide a string... ')
+#     print(string[::-1])
+
+
+# inverter()
+
+# 7) Scrie o funcție care primește o listă de stringuri și returnează o listă cu lungimile fiecărui string.
+
+# str_list = ['Ana', 'are', 'mere']
+# str_len = []
+
+
+# def len_str():
+#     global str_list
+#     global str_len
+#     for word in str_list:
+#         str_len.append(len(word))
+#     return str_len
+
+
+# rez = len_str()
+# print(rez)
+
+# 8) Scrie o funcție care primește doua liste de numere si returneaza o lista cu numerele comune celor doua liste.
+
+# def com():
+#     lista1 = [1, 2, 3, 4, 5]
+#     lista2 = [3, 4, 5, 6, 7]
+#     print(list(set(lista1).intersection(set(lista2))))
+
+
+# com()
+
+# 9) Scrie o functie care primeste un dictionar de forma {nume: varsta} si returneaza numele persoanei cu cea mai mica varsta.
+
+# dict_pers = {}
+# v_m = 100
+
+
+# def cmm(persoane):
+#     global v_m
+#     cmt = None
+#     for nume, varsta in persoane.items():
+#         if varsta <= v_m:
+#             v_m = varsta
+#             cmt = nume
+#     return cmt, v_m
+
+
+# while True:
+#     data = input("Please provide data... ")
+#     if data == "x":
+#         break
+#     data_sep = data.split()
+#     nume = data_sep[2]
+#     varsta = int(data_sep[-1])
+#     dict_pers[nume] = varsta
+
+# rezultat = cmm(dict_pers)
+# print(rezultat)
+
+
+# 10) Scrie o functie care primeste un dictionar de forma {nume: varsta} si returneaza un dictionar cu persoanele care au varsta peste 18 ani.
+
+# Nume - Ionescu | Varsta - 18
+# Nume - Popescu | Varsta - 15
+# Nume - Ana | Varsta - 21
+# Nume - Paul | Varsta - 31
+
+# persoane = {}
+# def filtru (persoane):
+#     rezultat = {}
+#     for nume, varsta in persoane.items() :
+#         if int(varsta) >= 18 :
+#             rezultat[nume] = varsta
+#     return rezultat
+# while True :
+#     date = input("Introdu datele : ")
+#     if date == 'stop' :
+#         break
+#     date_separate = date.split()
+#     nume = date_separate[2]
+#     varsta = date_separate[-1]
+#     persoane[nume] = varsta
+# print(filtru(persoane))
+
+# 11) Scrie o functie care primeste o lista de numere si un numar n, si returneaza o lista cu numerele mai mici decat n.
+
+# numere = []
+# lista_noua = []
+# n = int(input("Please input number 'n'...."))
+
+
+# def smaller_than(num):
+#     global lista_noua
+#     global numere
+#     global n
+#     for numar in numere:
+#         if numar < n:
+#             lista_noua.append(numar)
+
+#     return lista_noua
+
+
+# while True:
+#     data = input("Please enter numbers... ")
+#     if data == "x":
+#         break
+#     else:
+#         numere.append(int(data))
+
+
+# rezultat = smaller_than(lista_noua)
+# print(rezultat)
+
+# 12) Scrie o functie care primeste o lista de numere si returneaza cel mai mic numar, cel mai mare numar si media aritmetica a numerelor din lista.
+
+# import statistics
+# numere = []
+
+
+# def mega_frunctie(num):
+#     minim = min(numere)
+#     maxim = max(numere)
+#     media = sum(numere)/len(numere)  # SAU statistics.mean(numere)
+#     return (
+#         f"Cel mai mic numar este {minim}, cel mai mare numar este {maxim} iar media aritmetica este {media}")
+
+
+# while True:
+#     data = input("Please enter numbers... ")
+#     if data == "x":
+#         break
+#     else:
+#         numere.append(int(data))
+
+# rezultat = mega_frunctie(numere)
+# print(rezultat)
+
+# 13) Scrie o functie care primeste o lista de numere si returneaza un dictionar cu frecventa fiecarui
+# numar in lista (cheia este numarul, valoarea este frecventa).
+
+
+# creez un ditctionar gol
+#
+
+# def frecv_numere(lista):
+#     dictionar = {}
+
+#     for x in lista:
+#         if x in dictionar:
+#             dictionar[x] = dictionar[x] + 1
+#         else:
+#             dictionar[x] = 1
+#     return dictionar
+
+
+# numere = [10, 20, 10, 20, 30, 40, 30, 40, 50]
+
+# rezultat = frecv_numere(numere)
+# print(rezultat)
+
+# 14) Scrie o functie care primeste o lista de numere si returneaza o lista care contine numerele fara duplicate.
+
+# numere = []
+
+
+# def nodupe(num):
+#     global numere
+#     return list(set(list(numere)))
+
+
+# while True:
+#     data = input("Please enter numbers... ")
+#     if data == "x":
+#         break
+#     else:
+#         numere.append(int(data))
+
+# rezultat = nodupe(numere)
+# print(rezultat)
+
+# 15) Scrie o functie care primeste o lista de numere si returneaza o lista doar cu numerele prime.
+
+# limit = 200
+
+
+# def is_prime(n):
+#     if n < 2:
+#         return False
+#     for i in range(2, int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+
+
+# l_prime = [nr for nr in range(limit) if is_prime(nr)]
+
+# print(l_prime)
