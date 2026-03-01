@@ -1117,7 +1117,7 @@
 
 # import statistics  # pentru ex. 5
 
-# d1 = {'Adrian': 70, 'Doina': 67, 'Maria': 98, 'Mihai': 38, 'Madalina': 37}
+d1 = {'Adrian': 70, 'Doina': 67, 'Maria': 98, 'Mihai': 38, 'Madalina': 37}
 
 # 2) Afiseaza varsta unei persoane specifificate de utilizator.
 
@@ -1161,19 +1161,22 @@
 # 9) Verifica daca o persoana specificata de utilizator exista in dictionar.
 
 # search = input('Ca cautam azi in dictionar? ')
-# print(d1.get(search))
+# if search in d1:
+#     print('Untilizatorul exista!')
+# else:
+#     print('Utilizatorul nu exista')
 
 # 10) Actualizeaza varsta unei persoane specificate de utilizator.
 
 # older = input('Who is older now? ')
-# old = (input('How old are they? '))
+# old = int(input('How old are they? '))
 
 # d1[older] = old
 # print(d1)
 
 # 11) Afiseaza numarul total de persoane din dictionar.
 
-# print(len(list(d1.values())))
+# print(len(d1.values()))
 
 # 12) Creeaza o lista cu toate numele persoanelor din dictionar si afiseaza-le.
 
@@ -1184,11 +1187,18 @@
 
 # print(lista)
 
+# SAU
+
+# lista_nume = list(dictionar.keys())
+# lista_vrasta = list(dictionar.values())
+# print(lista_nume)
+# print(lista_vrasta)
+
 # 13) Creeaza un nou dictionar care sa contina doar persoanele cu varsta peste 18 ani.
 
 # d1.update({'Catalina': 10, 'Serban': 5, 'Razvan': 2, 'Alina': 32, 'Ion': 109})
 # print(d1)
-# d2 = {k: v for k, v in d1.items() if v >= 18}
+# d2 = {key: val for key, val in d1.items() if val >= 18}
 # print(d2)
 
 # 14) Creeaza o lista care contine toate varstele din dictionar, fara duplicate, si afiseaz-o.
@@ -1234,6 +1244,22 @@
 #     else:
 #         print('Astia bantuie....', k)
 
+# SAU
+
+# dic_persoane = {"mihai": 31, "paul": 31,
+#                 "catalin": 21, "aura": 25, "mama": 50, "tata": 52}
+# grupare = {}
+
+# for nume, varsta in dic_persoane.items():
+#     decada = (varsta // 10) * 10   # ex: 23 → 20
+#     if decada not in grupare:
+#         grupare[decada] = []
+#     grupare[decada].append(nume)
+
+# for decada in sorted(grupare):
+#     print(f"{decada}-{decada + 9}: {', '.join(grupare[decada])}")
+
+
 # 17) Afiseaza persoanele sortate alfabetic dupa nume. (Utilizati functia sorted pentru a rezolva acest exercitiu).
 
 # print(sorted(list(d1)))
@@ -1241,7 +1267,7 @@
 # 18) Afiseaza persoanele sortate dupa varsta, de la cea mai mica la cea mai mare. (Utilizati functia sorted pentru a rezolva acest exercitiu).
 #    (Folositi functia sorted() si pentru cheia de sortare (key) accesati valorile dictionarului).
 
-# print(sorted(list(d1.values())))
+# print(sorted(d1, key=d1.get))
 
 # 19) Se da urmatorul text: "Ana are 12 ani, Ion are 15 ani, Maria are 12 ani, George are 15 ani, Elena are 14 ani".
 #     Creeaza un dictionar care sa contina numele persoanelor ca si chei si varstele ca si valori.
@@ -1265,7 +1291,6 @@
 # def salut(nume):
 #     print(f"Salut {nume}")
 
-
 # salut("Mihai")
 
 # 2) Scrie o funcție care primește două numere și returnează suma lor.
@@ -1273,14 +1298,12 @@
 # def adunare(x, y):
 #     print(x + y)
 
-
 # adunare(5, 4)
 
 # 3) Scrie o funcție care primește două numere și returnează suma, diferența și produsul lor (returnează un tuple).
 
 # def calc(x, y):
 #     return (x + y, x - y, x * y)
-
 
 # rezultat = calc(5, 4)
 # print(rezultat)
@@ -1290,7 +1313,6 @@
 # def par(x):
 #     return x % 2 == 0
 
-
 # print(par(143))
 
 # 5) Scrie o functie care primeste ca parametru un numar si modifica valoarea unei variabile globale cu valoarea numarului la patrat.
@@ -1298,11 +1320,9 @@
 # X = 10
 # print(X)
 
-
 # def mod(y):
 #     global X
 #     X = y**2
-
 
 # mod(4)
 # print(X)
@@ -1328,7 +1348,6 @@
 #     string = input('Please provide a string... ')
 #     print(string[::-1])
 
-
 # inverter()
 
 # 7) Scrie o funcție care primește o listă de stringuri și returnează o listă cu lungimile fiecărui string.
@@ -1336,14 +1355,12 @@
 # str_list = ['Ana', 'are', 'mere']
 # str_len = []
 
-
 # def len_str():
 #     global str_list
 #     global str_len
 #     for word in str_list:
 #         str_len.append(len(word))
 #     return str_len
-
 
 # rez = len_str()
 # print(rez)
@@ -1355,14 +1372,12 @@
 #     lista2 = [3, 4, 5, 6, 7]
 #     print(list(set(lista1).intersection(set(lista2))))
 
-
 # com()
 
 # 9) Scrie o functie care primeste un dictionar de forma {nume: varsta} si returneaza numele persoanei cu cea mai mica varsta.
 
 # dict_pers = {}
 # v_m = 100
-
 
 # def cmm(persoane):
 #     global v_m
@@ -1372,7 +1387,6 @@
 #             v_m = varsta
 #             cmt = nume
 #     return cmt, v_m
-
 
 # while True:
 #     data = input("Please provide data... ")
@@ -1385,7 +1399,6 @@
 
 # rezultat = cmm(dict_pers)
 # print(rezultat)
-
 
 # 10) Scrie o functie care primeste un dictionar de forma {nume: varsta} si returneaza un dictionar cu persoanele care au varsta peste 18 ani.
 
@@ -1417,7 +1430,6 @@
 # lista_noua = []
 # n = int(input("Please input number 'n'...."))
 
-
 # def smaller_than(num):
 #     global lista_noua
 #     global numere
@@ -1428,14 +1440,12 @@
 
 #     return lista_noua
 
-
 # while True:
 #     data = input("Please enter numbers... ")
 #     if data == "x":
 #         break
 #     else:
 #         numere.append(int(data))
-
 
 # rezultat = smaller_than(lista_noua)
 # print(rezultat)
@@ -1445,14 +1455,12 @@
 # import statistics
 # numere = []
 
-
 # def mega_frunctie(num):
 #     minim = min(numere)
 #     maxim = max(numere)
 #     media = sum(numere)/len(numere)  # SAU statistics.mean(numere)
 #     return (
 #         f"Cel mai mic numar este {minim}, cel mai mare numar este {maxim} iar media aritmetica este {media}")
-
 
 # while True:
 #     data = input("Please enter numbers... ")
@@ -1467,7 +1475,6 @@
 # 13) Scrie o functie care primeste o lista de numere si returneaza un dictionar cu frecventa fiecarui
 # numar in lista (cheia este numarul, valoarea este frecventa).
 
-
 # creez un ditctionar gol
 #
 
@@ -1481,7 +1488,6 @@
 #             dictionar[x] = 1
 #     return dictionar
 
-
 # numere = [10, 20, 10, 20, 30, 40, 30, 40, 50]
 
 # rezultat = frecv_numere(numere)
@@ -1491,11 +1497,9 @@
 
 # numere = []
 
-
 # def nodupe(num):
 #     global numere
 #     return list(set(list(numere)))
-
 
 # while True:
 #     data = input("Please enter numbers... ")
@@ -1511,7 +1515,6 @@
 
 # limit = 200
 
-
 # def is_prime(n):
 #     if n < 2:
 #         return False
@@ -1520,7 +1523,151 @@
 #             return False
 #     return True
 
-
 # l_prime = [nr for nr in range(limit) if is_prime(nr)]
 
 # print(l_prime)
+
+# print(
+#     """
+# # 		1. Adaugare elev
+# # 		2. Afisarea elevilor existenti
+# # 		3. Modificare informatii elev existent
+# # 		4. Stergere elev
+# # 		5. Cautare elev dupa nume si prenume
+# # 		6. Afisare elevi in ordinea mediilor
+# # 		7. Afisare elevi cu media peste 8
+# # 		8. Afisare elevi in ordine alfabetica (dupa nume)
+
+# """
+# )
+
+# elevi = [{'nume': 'popescu', 'prenume': 'ana', 'nota romana': 6.0, 'nota mate': 7.0, 'nota engleza': 8.0, 'media': 7.0},
+#          {'nume': 'abesei', 'prenume': 'paul', 'nota romana': 7.0,
+#              'nota mate': 8.0, 'nota engleza': 9.0, 'media': 8.0},
+#          {'nume': 'popescu', 'prenume': 'andrei', 'nota romana': 3.0,
+#              'nota mate': 4.0, 'nota engleza': 5.0, 'media': 4.0}
+#          ]
+
+# def adauga_elev():
+#     nume = input("Nume : ")
+#     prenume = input("Prenume : ")
+#     nota_romana = float(input("Nota romana :"))
+#     nota_mate = float(input("Nota mate :"))
+#     nota_engl = float(input("Nota engleza :"))
+#     elev = {
+#         "nume": nume,
+#         "prenume": prenume,
+#         "nota romana": nota_romana,
+#         "nota mate": nota_mate,
+#         "nota engleza": nota_engl,
+#         "media": calculeaza_media(nota_romana, nota_mate, nota_engl)
+#     }
+#     elevi.append(elev)
+
+# def calculeaza_media(nota_romana, nota_mate, nota_engl):
+#     x = round((nota_romana + nota_mate + nota_engl)/3, 2)
+#     return x
+
+# def ia_media(elev):
+#     return elev['media']
+
+# def ia_nume(elev):
+#     return elev['nume']
+
+# def afiseaza_elevi():
+#     for elev in elevi:
+#         print(f"{elev['nume']} {elev['prenume']} | "
+#               f"Romana: {elev['nota romana']} | "
+#               f"Matematica: {elev['nota mate']} | "
+#               f"Engleza: {elev['nota engleza']} | "
+#               f"Media: {elev['media']}")
+
+# def afisare_alfabetic():
+#     elevi_sortati = sorted(elevi, key=ia_nume)
+#     for elev in elevi_sortati:
+#         print(f"{elev['nume']} {elev['prenume']}")
+
+# def sterge_elevi():
+#     nume = input("Ce nume vrei elimini ? ")
+#     prenume = input("Ce prenume vrei sa elimini ?")
+#     for elev in elevi[:]:
+#         if elev["nume"] == nume and elev["prenume"] == prenume:
+#             elevi.remove(elev)
+#             print("Am sters")
+#             return
+#     print("Elevul nu a fost gasit")
+
+# def modificare():
+#     nume = input("Ce nume sa modific : ")
+#     prenume = input("Ce prenume sa modific : ")
+#     for elev in elevi:
+#         if elev['nume'] == nume and elev['prenume'] == prenume:
+#             elev['nota romana'] = float(input("Nota roamana noua: "))
+#             elev['nota mate'] = float(input("Nota mate noua: "))
+#             elev['nota engleza'] = float(input("Nota engleza noua: "))
+#             elev['media'] = calculeaza_media(
+#                 elev['nota romana'], elev['nota mate'], elev['nota engleza'])
+#             print("Date modificate success!")
+#             return
+#     print("Elev negasit!")
+
+# def cauta_elevi():
+#     nume = input("Ce nume vrei ? ")
+#     prenume = input("Ce prenume vrei ?")
+#     for elev in elevi:
+#         if elev["nume"] == nume and elev["prenume"] == prenume:
+#             print(f"{elev['nume']} {elev['prenume']} | "
+#                   f"Romana: {elev['nota romana']} | "
+#                   f"Matematica: {elev['nota mate']} | "
+#                   f"Engleza: {elev['nota engleza']} | "
+#                   f"Media: {elev['media']}")
+#             return
+#     print("Elevul nu a fost gasit")
+
+# def afiseaza_media_crescator():
+#     elevi_sortati = sorted(elevi, key=ia_media)
+#     for elev in elevi_sortati:
+#         print(f"{elev['nume']} {elev['prenume']} | Media: {elev['media']}")
+
+# def medie_5():
+#     for elev in elevi:
+#         if elev['media'] >= 5:
+#             print(f"{elev['nume']} {elev['prenume']} | Media: {elev['media']}")
+
+# while True:
+#     optiune = input("Alege optiune : ")
+#     if optiune == '0':
+#         print("Ai iesit din sistem")
+#         break
+#     if optiune == "1":
+#         adauga_elev()
+#     if optiune == "2":
+#         afiseaza_elevi()
+#     if optiune == "3":
+#         modificare()
+#     if optiune == "4":
+#         sterge_elevi()
+#     if optiune == "5":
+#         cauta_elevi()
+#     if optiune == "6":
+#         afiseaza_media_crescator()
+#     if optiune == "7":
+#         medie_5()
+#     if optiune == "8":
+#         afisare_alfabetic()
+'''
+Exercitii Modules si Packages
+1. Sa se creeze un modul numit "operations" care sa contina functii pentru adunare, scadere, inmultire si impartire a doua numere.
+   Din fisierul principal, sa se importe modulul si sa se execute fiecare operatie cu doua numere generate aleatoriu.
+
+2. Sa se creeze un pachet numit "geometry" care sa contina doua module: "area" si "perimeter". Modulul "area" sa contina functii pentru calcularea ariei unui cerc, patrat si dreptunghi, iar modulul "perimeter" sa contina functii pentru calcularea perimetrului acelorasi forme geometrice.
+   Din fisierul principal, sa se importe pachetul si sa se execute fiecare functie cu valori generate aleatoriu.
+
+3. Sa se creeze un script care sa accepte argumente din linia de comanda pentru nume, prenume, varsta, folosind modulul argparse. Scriptul sa afiseze numele complet al persoanei si varsta in urmatorul format:
+    Nume: [nume]
+    Prenume: [prenume]
+    Varsta: [varsta] ani
+
+4. Sa se creeze un modul numit "string_utils" care sa contina functii pentru manipularea stringurilor: inversarea unui string, verificarea daca un string este palindrom.
+   Sa se scrie un script care sa importe modulul si sa se execute fiecare functie asupra unui string primit ca si argument din linia de comanda.
+'''

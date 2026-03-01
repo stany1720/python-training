@@ -523,3 +523,131 @@
 
 
 # print(frecventa_nr(lista_simpla, 1))
+
+# functii in functii ca parametru
+
+# def aduna(lista_elemente):
+#     suma = 0
+#     for element in lista_elemente:
+#         suma += element
+#     return suma
+
+
+# def produs(lista_elemente):
+#     produsul = 1
+#     for elem in lista_elemente:
+#         produsul *= elem
+
+#     return produsul
+
+
+# def suma_liste(func, lista_cu_liste):
+#     suma_totala = 0
+#     for lista in lista_cu_liste:
+#         print(lista)
+#         print(func(lista))
+#         suma_totala += func(lista)
+
+#     return suma_totala
+
+
+# lista = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+
+# print("Suma sumelor elemntelor din liste este: ", suma_liste(aduna, lista))
+# print("Suma produselor elementelor din liste este: ", suma_liste(produs, lista))
+
+# dictionar = {}
+# sorted(dictionar, key=dictionar.get)
+
+# decoratorii = functia "decoreaza" ceva extra ce nu face prima functie pe care nu vrei s-o strici pe prima.
+
+# argumente variabile: oricati parametrii vor veni, vor fi adaugati:
+
+# def suma(p1, p2, *args):
+#     print(p1)
+#     print(p2)
+#     print(args)
+#     # s = p1 + p2
+#     return sum(args)
+
+
+# print(suma(10, 7))
+# print(suma(10, 11, 12, 13))
+
+# def suma2(p1, p2, **kwargs): #Kwargs necesita 2 stelute 1pt cheie 2pt valoare
+#     print(p1)
+#     print(p2)
+#     print(kwargs)
+
+
+# suma2(p1=10, p2=20, p3=30, p4=40)
+
+# [DEBUG]
+
+# def logare(*mesaje, **optiuni):
+#     nivel = optiuni.get('nivel', 'INFO')
+#     separator = optiuni.get('separator', ' ')
+#     log_final = separator.join(str(mesaj) for mesaj in mesaje)
+#     print(f"[{nivel}]{log_final}")
+
+
+# action = "start program"
+# user = "Anisoara"
+
+# logare(f"Action: {action}", f"User: {user}", nivel="DEBUG", separator=" | ")
+# logare("Eroare la conectare", nivel="ERROR")
+
+
+# Sa se scrie un program care tine evidenta elevilor dintr-o scoala. Programul trebuie sa dispuna de un meniu care ne pune la dispozitie urmatoarele optiuni:
+#         a. Adaugare elev
+#         b. Afisarea elevilor existenti
+#         c. Modificare informatii elev existent
+#         d. Stergere elev
+#         e. Cautare elev dupa nume si prenume
+#         f. Afisare elevi in ordinea mediilor
+#         g. Afisare elevi cu media peste 8
+#         h. Afisare elevi in ordine alfabetica (dupa nume)
+
+#     Pentru fiecare elev trebuie sa retinem urmatoarele informatii:
+#     Nume
+#     Prenume
+#     Nota romana
+#     Nota matematica
+#     Nota engleza
+#     Media
+
+# Sa se scrie un program care tine evidenta elevilor dintr-o scoala. Programul trebuie sa dispuna de un meniu care ne pune la dispozitie urmatoarele optiuni:
+# 		1. Adaugare elev
+# 		2. Afisarea elevilor existenti
+# 		3. Modificare informatii elev existent
+# 		4. Stergere elev
+# 		5. Cautare elev dupa nume si prenume
+# 		6. Afisare elevi in ordinea mediilor
+# 		7. Afisare elevi cu media peste 8
+# 		8. Afisare elevi in ordine alfabetica (dupa nume)
+
+# 	Pentru fiecare elev trebuie sa retinem urmatoarele informatii:
+#     Nume
+#     Prenume
+#     Nota romana
+#     Nota matematica
+#     Nota engleza
+#     Media
+
+# Sa se scrie un program care tine evidenta elevilor dintr-o scoala. Programul trebuie sa dispuna de un meniu care ne pune la dispozitie urmatoarele optiuni:
+# 		1. Adaugare elev
+# 		2. Afisarea elevilor existenti
+# 		3. Modificare informatii elev existent
+# 		4. Stergere elev
+# 		5. Cautare elev dupa nume si prenume
+# 		6. Afisare elevi in ordinea mediilor
+# 		7. Afisare elevi cu media peste 8
+# 		8. Afisare elevi in ordine alfabetica (dupa nume)
+
+# 	Pentru fiecare elev trebuie sa retinem urmatoarele informatii:
+#     Nume
+#     Prenume
+#     Nota romana
+#     Nota matematica
+#     Nota engleza
+#     Media
