@@ -651,3 +651,301 @@
 #     Nota matematica
 #     Nota engleza
 #     Media
+
+'''
+Exercitii OOP in Python:
+A) --- Exercitii - Introducere OOP si Clase
+Creeaza o clasa numita "Animal" care are atributele "nume", "varsta" si "specie". Adauga o metoda numita "descriere" care returneaza o descriere a animalului.
+Instantiaza doua obiecte ale clasei "Animal" si apeleaza metoda "descriere" pentru fiecare obiect.
+
+Creeaza o clasa numita "Masina" care are atributele "marca", "model" si "an_fabricatie". Adauga o metoda numita "descriere" care returneaza o descriere a masinii.
+Instantiaza trei obiecte ale clasei "Masina" si afiseaza informatiile despre fiecare masina.
+
+3.
+a) Creeaza o clasa numita "Persoana" care are atributele "nume", "varsta" si "gen".
+b) Creeaza o lista de 5 persoane si afiseaza numele si varsta fiecarei persoane din lista.
+c) Adauga o metoda numita "introducere" in clasa "Persoana" care returneaza o introducere a persoanei 
+    (ex: "Numele meu este X, am Y ani si sunt de gen Z"). Apeleaza aceasta metoda pentru fiecare persoana din lista.
+d) Creeaza o metoda numita "este_major" care returneaza True daca persoana are varsta de 18 ani sau mai mult, si False in caz contrar. 
+    Apeleaza aceasta metoda pentru fiecare persoana din lista si afiseaza daca fiecare persoana este major sau nu.
+e) Creeaza o metoda numita "schimba_gen" care schimba genul persoanei (ex: daca genul este "masculin", il schimba in "feminin" si invers). 
+    Apeleaza aceasta metoda pentru fiecare persoana din lista si afiseaza noul gen al fiecarei persoane.
+f) Creeaza o metoda numita "adauga_ani" care adauga un numar specificat de ani la varsta persoanei. 
+    Apeleaza aceasta metoda pentru fiecare persoana din lista, adaugand un numar aleator de ani si afiseaza noua varsta a fiecarei persoane.
+g) Afiseaza o lista cu toate persoanele care sunt majore.
+h) Afiseaza o lista cu toate persoanele care au genul "masculin" si au peste 14 ani.
+''' 
+
+# class Persoana:
+#     def __init__(self, nume, varsta, gen):
+#         self.nume = nume
+#         self.varsta = varsta
+#         self.gen = gen
+
+#     def introducere(self):
+#         print(f'Numele meu este {self.nume}, am {self.varsta} ani si sunt de genul {self.gen}')
+
+#     def este_major(self):
+#         if self.varsta >= 18:
+#             return True
+#         return False
+    
+#     def schimba_gen(self):
+#         if self.gen == "M":
+#             self.gen = "F"
+#         else:
+#             self.gen = "M"
+
+# persoane = [Persoana('Andrei', 20, "M"), Persoana('Alexandra', 32, "F"), Persoana('Maria', 16, 'F'), Persoana('Daniel', 31, "M")]
+
+
+# while len(persoane) < 5:
+#     nume = input("Introdu numele: ")
+#     varsta = int(input(" Introdu varsta: "))
+#     gen = input("Introdu genul: ")
+
+#     persoana = Persoana(nume, varsta, gen)
+#     persoane.append(persoana)
+
+# for persoana in persoane:
+    # print(f'Persoana {persoana.nume} are varsta {persoana.varsta}')
+    # persoana.introducere()
+    # print(f"{persoana.nume} - " , persoana.este_major())
+    # persoana.schimba_gen()
+    # persoana.introducere()
+
+
+# Encapsulation and Abstraction
+
+# class Elev: 
+#     def __init__(self, nume, prenume, nota_romana, nota_mate, nota_engleza):
+#         self.nume = nume
+#         self.prenume = prenume
+#         self.nota_romana = nota_romana 
+#         self.nota_mate = nota_mate
+#         self.nota_engleza = nota_engleza
+
+# elev1 = Elev("Neamtiu", "Daniel", 8, 9, 10)
+
+# # Protected: informeaza alti programatori sa nu se atinga de variabilele clasei
+
+# class Elev: 
+#     def __init__(self, nume, prenume, nota_romana, nota_mate, nota_engleza):
+#         self._nume = nume
+#         self._prenume = prenume
+#         self._nota_romana = nota_romana 
+#         self._nota_mate = nota_mate
+#         self._nota_engleza = nota_engleza
+
+# # Private: vezi media
+
+# class Elev: 
+#     def __init__(self, nume, prenume, nota_romana, nota_mate, nota_engleza, media):
+#         self._nume = nume
+#         self._prenume = prenume
+#         self._nota_romana = nota_romana 
+#         self._nota_mate = nota_mate
+#         self._nota_engleza = nota_engleza
+#         self.__media = media
+
+# Getter/Setter: get x, sext x
+
+# class Elev: 
+#     def __init__(self, nume, prenume, nota_romana, nota_mate, nota_engleza, media):
+#         self._nume = nume
+#         self._prenume = prenume
+#         self._nota_romana = nota_romana
+#         self._nota_mate = nota_mate
+#         self._nota_engleza = nota_engleza
+#         self.__media = self._update_media()
+
+#     def get_media(self):
+#         return self.__media
+
+#     def get_mate(self):
+#         return self._nota_mate
+
+#     def set_mate(self, new_mate):
+#         if self._validare_nota(new_mate):
+#             self._nota_mate = new_mate
+#         else:
+#             print("Nota trebuie sa fie intre 1 si 10")
+
+#     def _update_media(self):
+#         return round((self._nota_mate + self._nota_romana + self. _nota_engleza) / 3, 2)
+
+#     def _validare_nota(self, new_nota):
+#         if 0 < new_nota <= 10:
+#             return True
+#         else: return False
+
+# elev1 = Elev("Neamtiu", "Daniel", 8, 9, 10, 9)
+# print(elev1.get_media())
+
+# class Ghiozdan:
+#     def __init__(self, obiecte):
+#         self.obiecte = obiecte
+
+#     def __len__(self):
+#         return len(self.obiecte)
+    
+#     def __str__(self):
+#         return f"Ghiozdanul are urmatoarele {self.obiecte}"
+
+#     def __repr__(self):
+#         return f'Ghiozdan(obiecte = "{self.obiecte}")'
+
+# lista = [1, 2, 3, 4]
+
+# ghiozdan = Ghiozdan(lista)
+# print(len(ghiozdan))
+# print(ghiozdan)
+# lista_ghiozdane = [Ghiozdan(lista), Ghiozdan([7, 8, 9]), Ghiozdan([2, 3, 4])]
+# print(lista_ghiozdane)
+
+# class Persoana:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __repr__(self):
+#         return f"Persoana (nume = '{self.name}', age = {self.age})"
+
+# persoana1 = Persoana("Alice", 30)
+# print(repr(persoana1)) # Persoana(nume = 'Alice', age = 30)
+
+# MOSTENIRE SI POLIMORFISM:
+# Mostenire:
+# Creezi o clasa de baza si apoi o clasa copil care pe langa standard, are trasaturi in plus. 
+# Polimorfism:
+# Folosesi clasa initiala din clasa de baza si adaugi trasaturi specifice(animnal vs. caine, pisica(una face miau, altul ham))
+
+# Mostenire sintaxa:
+
+# class Clasa Parinte:
+#     cod
+
+# class ClasaCopil(ClasaParinte):
+#     cod copil
+
+#  folosind super().__init__() poti prelua innit-ul din clasa parinte
+
+# Exemple: 
+
+# class Persoana:
+#     def __init__(self, nume, prenume, varsta):
+#         self.nume = nume
+#         self.prenume = prenume
+#         self.varsta = varsta
+
+#     def prezentare(self):
+#         print(f'Salut, ma numesc {self.prenume} {self.nume} si am {self.varsta} ani. ')
+
+# persoana1 = Persoana("Stanislav", "Mihai", 38)
+# persoana2 = Persoana("Abesei", "Paul", 31)
+
+# persoana1.prezentare()
+# persoana2.prezentare()
+
+# class Elev(Persoana):
+#     def __init__(self, nume, prenume, varsta, nota_romana, nota_mate):
+#         super().__init__(nume, prenume, varsta)
+#         self.nota_romana = nota_romana
+#         self.nota_mate = nota_mate
+
+    
+
+# elev1 = Elev("Neamtiu", "Daniel", 15, 10, 10)
+
+# elev1.prezentare()
+
+
+# class Elev(Persoana):
+#     def __init__(self, nume, prenume, varsta, nota_romana, nota_mate):
+#         super().__init__(nume, prenume, varsta)
+#         self.nota_romana = nota_romana
+#         self.nota_mate = nota_mate
+
+#     def afisaza_note(self):
+#         print(f'Notele mele sunt la Romana: {self.nota_romana} si la Mate: {self.nota_mate}')
+
+# elev1 = Elev("Neamtiu", "Daniel", 15, 10, 10)
+
+# elev1.prezentare()
+# elev1.afisaza_note()
+
+# class Elev(Persoana):
+#     def __init__(self, nume, prenume, varsta, nota_romana, nota_mate):
+#         super().__init__(nume, prenume, varsta)
+#         self.nota_romana = nota_romana
+#         self.nota_mate = nota_mate
+
+#     def prezentare(self):
+#         super().prezentare() # RETURN NU E OBLIGATORIU
+#         print(f'Am urmatoarele note la Romana: {self.nota_romana} si la Mate: {self.nota_mate}')
+
+#     def afisaza_note(self):
+#         print(f'Notele mele sunt la Romana: {self.nota_romana} si la Mate: {self.nota_mate}')
+
+#     def calculeaza_media(self):
+#         return sum([self.nota_romana, self.nota_mate]) / 2
+
+# elev1 = Elev("Neamtiu", "Daniel", 15, 10, 10)
+# elev2 = Elev("Ionescu", "Andrei", 15, 8, 9)
+
+# elev1.prezentare()
+# elev1.afisaza_note()
+# print(elev1.calculeaza_media())
+
+# lista_oameni = [persoana1, persoana2, elev1]
+# for om in lista_oameni:
+#     om.prezentare()
+
+# class Profesor(Persoana):
+#     def __init__(self, nume, prenume, varsta, materie):
+#         super().__init__(nume, prenume, varsta)
+#         self._materie = materie
+
+#     def prezentare(self):
+#         print(f'Eu sunt profesorul {self.nume}, am varsta de {self.varsta} ani, si predau materia {self.materie}')
+
+#     def get_materie(self):
+#         return self._materie
+
+#     def __str__(self):
+#         return f'{self.nume} {self.prenume}'
+
+# class ElevLiceu(Elev):
+#     def __init__(self, nume, prenume, varsta, nota_romana, nota_mate, diriginte):
+#         super().__init__(nume, prenume, varsta, nota_romana, nota_mate)
+#         self.diriginte = diriginte
+
+#     def get_diriginte(self):
+#         print(f'Dirigintele meu este {self.diriginte}. ')
+
+#     def prezentare(self):
+#         return super().prezentare()
+    
+#     def __str__(self):
+#         return f'{self.nume} {self.prenume}' 
+
+
+# profesor1 = Profesor("Marinescu", "Alexandru", 67, "Spaniola")
+# profesor2 = Profesor("Andreescu", "Marin", 45, "Etica")
+
+# elevliceu1 = ElevLiceu("Antonescu", "Maria", 17, 10, 9, profesor1)
+# elevliceu2 = ElevLiceu("Parvulescu", "Alexandra", 16, 8, 9, profesor2)
+
+# lista_scoala = [profesor1, profesor2, elev1, elev2, elevliceu1, elevliceu2]
+
+# for persoana in lista_scoala:
+#     persoana.prezentare()
+
+# elevliceu1.get_diriginte()
+
+# print(f'Dirigintele lui {elevliceu1} preda {elevliceu1.diriginte.get_materie()}')
+# elevliceu1.diriginte.materie = "Germana"
+# print(f'Dirigintele lui {elevliceu1} preda {elevliceu1.diriginte.get_materie()}')
+
+# print(profesor1.materie) # Acum se creaza o noua variabila materie, deoarece _materie este protejat
+
