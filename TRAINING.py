@@ -949,3 +949,129 @@ h) Afiseaza o lista cu toate persoanele care au genul "masculin" si au peste 14 
 
 # print(profesor1.materie) # Acum se creaza o noua variabila materie, deoarece _materie este protejat
 
+# COMPOZITION:
+
+# class Motor:
+#     def __init__(self, cai_putere, tip_combustibil, cilindree):
+#         self.cai_putere = cai_putere
+#         self.tip_combustibil = tip_combustibil
+#         self.cilindree = cilindree
+
+#     def start_engine(self):
+#         print('Engine started! ')
+#         return True
+    
+#     def detalii_motor(self):
+#         print(f'Motor pe {self.tip_combustibil} cu capacitate cilidrica {self.cilindree} cm cubi, cu {self.cai_putere} de cai putere. ')
+
+# class Volan:
+#     def __init__(self, diametru, material):
+#         self.diametru = diametru
+#         self.material = material
+    
+#     def viraj_stanga(self):
+#         print('Vireaza stanga!')
+    
+#     def viraj_dreapta(self):
+#         print('Vireaza dreapta!')
+
+# class Roti:
+#     def __init__(self, material_jante, presiune):
+#         self.material_jante = material_jante
+#         self.presiune = presiune
+    
+#     def check_presiune(self):
+#         if self.presiune > 2.2:
+#             print("Presiunea in roti este prea mare!")
+#             return False
+#         elif self.presiune < 1.8:
+#             print("Presiunea scazuta in roti!")
+#             return False
+#         else:
+#             print("Presiunea anvelopelor este OK!")
+#             return True
+        
+# class Masina:
+#     def __init__(self, culoare, marca, motor, volan, roti):
+#         self.culoare = culoare
+#         self.marca = marca
+#         self.motor = motor
+#         self.volan = volan
+#         self.roti = roti
+
+#     def porneste_masina(self):
+#         if self.motor.start_engine() and self.roti.check_presiune():
+#             print("Masina e gata de drum!")
+#         else:
+#             print("Deplasarea imposibila. Verificati motorul sau rotile! ")
+    
+#     def deplasare_dreapta(self):
+#         self.volan.viraj_dreapta()
+
+#     def deplasare_stanga(self):
+#         self.volan.viraj_stanga()
+
+# roata1 = Roti('tabla', 2.0)
+# roata2 = Roti('aliaj', 1.7)
+
+# volan1 = Volan(20, "piele")
+# volan2 = Volan(18, "plastic")
+
+# motor1 = Motor(135, "benzina", 1.5)
+# motor2 = Motor(160, "diesel", 1.99)
+# motor3 = Motor(90, 'benzina', 1.3)
+
+# masina_angelo = Masina('visinie', 'Ford', motor3, volan2, roata2)
+
+# # masina_angelo.porneste_masina()
+# masina_angelo.roti = roata1
+# masina_angelo.porneste_masina()
+# masina_angelo.deplasare_dreapta()
+# masina_angelo.deplasare_stanga()
+
+# masina_angelo.motor.detalii_motor()
+
+# Exercitii in clasa: 
+
+# class Produs:
+#     def __init__(self, nume, pret):
+#         self.nume = nume
+#         self.pret = pret
+        
+#     def prezentare(self):
+#         print(f'Produsul este {self.nume} si are pretul de {self.pret} lei. ')
+
+
+# class Comanda:
+#     def __init__(self):
+#         self.cos = []
+    
+#     def adauga_produs(self, produs, cantitate):
+#         self.cos.extend([produs] * cantitate)
+
+#     def total(self):
+#         total = 0
+#         for produs in self.cos:
+#             total += produs.pret
+#         return total
+    
+# produs1 = Produs('baterie', 6)
+# produs2 = Produs('ciocolata', 12)
+# produs3 = Produs('bere', 9)
+# produs4 = Produs('tigari', 33)
+# produs5 = Produs('chips', 33)
+
+# comanda_paul = Comanda()
+# comanda_paul.adauga_produs(produs1, 4)
+# comanda_paul.adauga_produs(produs2, 1)
+# comanda_paul.adauga_produs(produs3, 3)
+# comanda_paul.adauga_produs(produs4, 1)
+# comanda_paul.adauga_produs(produs5, 2)
+
+# print(comanda_paul.total())
+
+
+
+
+
+
