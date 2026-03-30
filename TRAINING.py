@@ -1071,7 +1071,295 @@ h) Afiseaza o lista cu toate persoanele care au genul "masculin" si au peste 14 
 # print(comanda_paul.total())
 
 
+'''
+Sa se scrie un program care tine evidenta elevilor dintr-o scoala.
+Programul trebuie sa dispuna de un meniu care ne pune la dispozitie urmatoarele optiuni:
+
+- Adaugare elev
+- Afisarea elevilor existenti
+- Modificare informatii elev existent
+- Stergere elev
+- Cautare elev dupa nume si prenume
+- Afisare elevi in ordinea mediei
+- Afisare elevi cu media peste 8
+- Afisare elevi cu media sub 5
+- Iesire din program
+
+Pentru fiecare elev trebuie sa retinem urmatoarele informatii:
+- Nume
+- Prenume
+- Nota romana
+- Nota matematica
+- Nota engleza
+- Media (sa se calculeze automat pe baza notelor introduse)
+
+Implementarea programului trebuie sa utilizeze conceptele de programare orientata pe obiect, cum ar fi
+clase, obiecte, mostenire, polimorfism, incapsulare si abstractizare.
+'''
+# import json
+
+# class ValidationError(Exception):
+#     pass
+
+# class Person:
+#     def __init__(self, first_name, last_name):
+#         self.last_name = last_name
+#         self.first_name = first_name
+        
+#     def present(self):
+#         print(f'My name is {self.first_name}{self.last_name}')
+
+# class Student(Person):
+#     def __init__(self, first_name, last_name, n_rom, n_math, n_engl):
+#         super().__init__(first_name, last_name,)
+#         self.__set_grade(n_rom, n_math, n_engl)
+        
+#     def update_grades(self, n_rom, n_math, n_engl):
+#         self.__set_grade(n_rom, n_math, n_engl)
+
+#     def get_final(self):
+#         return round((self.__n_rom + self.__n_math + self.__n_engl) / 3, 2)
+
+#     def __set_grade(self, n_rom, n_math, n_engl):
+#         for grade in (n_rom, n_math, n_engl):
+#             if not(1 <= grade <= 10):
+#                 raise ValidationError('Grades must be between 1 and 10!')
+#         self.__n_rom = n_rom
+#         self.__n_math = n_math
+#         self.__n_engl = n_engl
+
+#     def to_dict(self):
+#         return {
+#             "firsname": self.first_name,
+#             "lastname": self.last_name,
+#             "rom": self.__n_rom,
+#             "math": self.__n_math,
+#             "engl": self.__n_engl
+#         }
+
+#     def __str__(self):
+#         return f'{self.first_name}{self.last_name} - Final: {self.get_final()}'
+    
+#     def __repr__(self):
+#         return f'[Firstname: {self.first_name}, Lastname: {self.last_name}, Grades: {self.__n_rom}, {self.__n_math}, {self.__n_engl}]'
+
+# class StudentDatabase:
+#     def __init__(self, filename='students.json'):
+#         self._filename = filename
+
+#     def save(self, students):
+#         try:
+#             with open(self._filename, 'w') as jsondb:
+#                 json.dump([student.to_dict() for student in students], jsondb, indent = 4)
+#         except Exception as exception:
+#             print('Something went wrong when writing to DB!')
+#             print(exception)
+
+#     def load(self):
+#         try:
+#             with open(self._filename, "r") as jsondb:
+#                 students_data = json.load(jsondb)
+
+#                 students = []
+#                 for entry in students_data:
+#                     student = Student(entry['first_name'], entry['last_name'], entry['n_rom'], entry['n_math'], entry['n_engl'])
+#                     students.append(student)
+
+#                 return student
+
+#         except FileNotFoundError:
+#             print('Specified DB was not found!')
+#         except Exception as exception:
+#             print('Something went wrong when reading from DB!')
+#             print(exception)
+
+# class SchoolService:
+#     def __init__(self, student_db):
+#         self._student_db = student_db
+#         self.studets = student_db.load()
+
+#     def add_student(self, student):
+#         if self.find_student(student.first_name, student.last_name):
+#             raise ValidationError("Student already exists!")
+#         self.studets.append(student)
+#         self._student_db.save(self.students)
+
+#     def find_student(self, first_name, last_name):
+#         for student in self.students:
+#             if student.first_name == first_name and student.last_name == last_name:
+#                 return student
+#         return None
+
+#     def get_all_students(self):
+#         for student in self.studets: 
+#             print(student)
+
+#     def update_student(self, first_name, last_name, n_rom, n_math, n_engl):
+#         student = self.find_student(first_name, last_name)
+#         if not student:
+#             raise ValidationError('Specified student does not exist!')
+#         student.update_grades(n_rom, n_math, n_engl)
+#         self._student_db.save(self._students)
+
+#     def delete_student(self, first_name, last_name):
+#         student = self.find_student(first_name, last_name)
+#         if not student:
+#             raise ValidationError('Specified student does not exist!')
+#         self.studets.remove(student)
+#         self.studets.save(self.studets)
+
+#     def sort_by_avg_grade(self):
+#         sorted_students = sorted(self._students, key = lambda student: student.get_media())
+#         for student in self._students:
+#             print(student)
+
+#     def get_above_8(self):
+#         for student in [student for student in self._students if student.get_media() > 8]:
+#             print(student)
+    
+#     def get_below_5(self):
+#         for student in [student for student in self._students if student.get_media() < 5]:
+#             print(student)
+
+# def main():
+#     student_db = StudentDatabase()
+#     school_service = SchoolService(student_db)
+
+#     while True:
+#         print("\nChoose an option : ")
+#         print('1. Add student')
+#         print('2. Show students')
+#         print("3. Modify student's data")
+#         print('4. Delete student completly')
+#         print('5. Search student')
+#         print('6. Sort by media')
+#         print('7. Show students with media > 8')
+#         print('---- Press 0 to exit !!! ----')
+
+#         option = input("Option: ")
+#         if option == "1":
+#             first_name = input('First Name')
+#             last_name = input('Last name')
+#             n_rom = int(input('rom'))
+#             n_math = int(input('math'))
+#             n_engl = int(input('engl'))
+#             student = Student(first_name, last_name, n_rom, n_math, n_engl)
+#             school_service.add_student(student)
+#         if option == "2":
+#             school_service.get_all_students()
+#         if option == "3":
+#             first_name = input('First Name')
+#             last_name = input('Last name')
+#             n_rom = int(input('rom'))
+#             n_math = int(input('math'))
+#             n_engl = int(input('engl'))
+#             school_service.update_student(first_name, last_name, n_rom, n_math, n_engl)
+#         if option == "4":
+#             first_name = input('First Name')
+#             last_name = input('Last name')
+#             school_service.delete_student(first_name, last_name)
+#         if option == "5":
+#             first_name = input('First Name')
+#             last_name = input('Last name')
+#             print(school_service.find_student(first_name, last_name))
+#         if option == "6":
+#             school_service.sort_by_avg_grade()
+#         if option == "7":
+#             school_service.get_above_8()
+#         if option == "8":
+#             school_service.get_below_5()
+#         if option == "0":
+#             print("Closing program!")
+#             break
+
+
+# if __name__ == '__main__':
+#     main()
 
 
 
 
+
+# student1 = Student("Alex", "Miron", 10, 7, 8)
+# student2 = Student("Marian", "Ionescu", 6, 7, 10)
+# student3 = Student("Maria", "Marinescu", 9, 7, 6)
+# student4 = Student("Daniel", "Neamtiu", 11, 10, -1)
+
+# print(student1)
+# print(student2)
+# print(student3)
+# print([student1, student2, student3])
+# print(student1.to_dict())
+
+# my_students = [student1, student2, student3]
+# my_database = StudentDatabase()
+# my_students = my_database.load()
+# print(my_students)
+
+##########################################################################
+##########################################################################
+
+#### BAZE DE DATE ###############
+
+##########################################################################
+##########################################################################
+
+# SQL - Structured Query Language (tabele si relatii intre tabele)
+# 
+import sqlite3
+
+# connection = sqlite3.connect() 
+# cursor = connection.cursor() # Un fel de index
+# connection.commit() # Salveaza modificarile in db
+# connection.close() # Inchide onexiunea la db
+
+# cursor.execute() # comenzi pt a rula actiuni asupra db SQL (doar stringuri)
+
+#Exemplu:
+
+connection = sqlite3.connect('students.db') 
+cursor = connection.cursor()
+
+# cursor.execute("""
+#     CREATE TABLE IF NOT EXISTS students (
+#         id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         first_name TEXT,
+#         last_name TEXT,
+#         math_grade INTEGER,
+#         english_grade INTEGER,
+#         cs_grade INTEGER
+#     )
+#     """)
+# connection.commit()
+
+# cursor.execute("""
+#     INSERT INTO students (first_name, last_name, math_grade, english_grade, cs_grade)
+#     VALUES (?, ?, ?, ?, ?) 
+#     """, ('Alice', 'Smith', 85, 90, 95))
+# # ? sunt placeholdere care nu permit SQL injection.
+# connection.commit()
+# connection.close()
+
+# cursor.execute("""
+#     INSERT INTO students (first_name, last_name, math_grade, english_grade, cs_grade)
+#     VALUES (?, ?, ?, ?, ?) 
+#     """, ('Daniel', 'Neamtiu', 70, 80, 90))
+# connection.commit()
+# connection.close()
+
+
+# students_list = [
+#     ("Luca", 'Bianchi', 90, 85, 88),
+#     ('Sara', 'Rossi', 75, 80, 82),
+#     ('Marco', 'Verdi', 60, 65, 70)
+# ]
+# cursor.executemany('''
+#     INSERT INTO students (first_name, last_name, math_grade, english_grade, cs_grade)
+#     VALUES (?, ?, ?, ?, ?)
+# ''', students_list)
+# connection.commit()
+
+cursor.execute("SELECT * FROM students")
+rows = cursor.fetchall()
+connection.close()
+print(rows)
