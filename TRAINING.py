@@ -1317,8 +1317,8 @@ import sqlite3
 
 #Exemplu:
 
-connection = sqlite3.connect('students.db') 
-cursor = connection.cursor()
+# connection = sqlite3.connect('students.db') 
+# cursor = connection.cursor()
 
 # cursor.execute("""
 #     CREATE TABLE IF NOT EXISTS students (
@@ -1359,7 +1359,62 @@ cursor = connection.cursor()
 # ''', students_list)
 # connection.commit()
 
-cursor.execute("SELECT * FROM students")
-rows = cursor.fetchall()
-connection.close()
-print(rows)
+# cursor.execute("SELECT * FROM students")
+# rows = cursor.fetchall()
+# connection.close()
+# print(rows)
+
+# cursor.execute("SELECT * FROM students WHERE first_name = ?", ('Alice',))
+# data = cursor.fetchone()
+# connection.close()
+# print(data)
+
+# cursor.execute("SELECT math_grade, english_grade, cs_grade FROM students WHERE first_name = ?", ('Alice',))
+# rows = cursor.fetchall()
+# connection.close()
+# print(rows)
+
+# cursor.execute("SELECT first_name, math_grade FROM students WHERE math_grade > ?", (80,))
+# data = cursor.fetchall()
+# connection.close()
+# print(data)
+
+# cursor.execute("""
+#     UPDATE students
+#     SET math_grade = ?
+#     WHERE first_name = ? AND last_name = ?
+#     """, (95, "Alice", "Smith"))
+# connection.commit()
+# cursor.execute("SELECT math_grade FROM students WHERE first_name = ?", ('Alice',))
+# print(cursor.fetchone())
+
+# cursor.execute("DELETE FROM students WHERE first_name = ? AND last_name = ?", ('Alice', 'Smith'))
+# connection.commit()
+
+# cursor.execute("SELECT * FROM students")
+# rows = cursor.fetchall()
+# connection.close()
+# print(rows)
+
+# with sqlite3.connect('students.db') as connection:
+#     cursor = connection.cursor()
+#     cursor.execute('''
+#         INSERT INTO students (first_name, last_name, math_grade)
+#         VALUES (?, ?, ?)
+# ''', ('Alice', 'Smith', 95))
+#     connection.commit()
+
+# with sqlite3.connect('students.db') as connection:
+#     cursor = connection.cursor()
+#     cursor.execute("""
+#         UPDATE students
+#         SET english_grade = ?, cs_grade = ?
+#         WHERE first_name = ? AND last_name = ?
+#         """, (70, 50, "Alice", "Smith"))
+#     connection.commit()
+
+# with sqlite3.connect('student.db') as connection:
+#     cursor = connection.cursor()
+#     ids = [(7,), (8,)]
+#     cursor.execute('DELETE FROM students WHERE id = ?', ids)
+#     connection.commit()
