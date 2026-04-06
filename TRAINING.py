@@ -1418,3 +1418,70 @@ import sqlite3
 #     ids = [(7,), (8,)]
 #     cursor.execute('DELETE FROM students WHERE id = ?', ids)
 #     connection.commit()
+
+######################################################################
+
+## ----- INTERFATA GUI ------
+
+######################################################################
+
+
+import tkinter
+
+window = tkinter.Tk()
+window.title('Prima mea interfata bengoasa')
+window.geometry('400x300')
+window.resizable(False, False)
+
+# tkinter.Label(window, text = 'Nume:').pack(side='left')
+# name_entry = tkinter.Entry(window)
+# name_entry.pack()
+
+# def greet():
+#     name = name_entry.get()
+#     tkinter.Label(window, text=f'Hello {name}!').pack()
+
+# def greet_internal():
+#     name = name_entry.get()
+#     print(name)
+
+
+# tkinter.Button(window, text = 'Greet', command = greet).pack()
+# tkinter.Button(window, text = 'Print in terminal', command=greet_internal).pack()
+
+# tkinter.Label(window, text = 'Nume:').grid(row=0, column=0)
+# name_entry = tkinter.Entry(window)
+# name_entry.grid(row=0, column=1)
+
+# output_label = tkinter.Label(window, text='')
+# output_label.grid(row=0, column=2)
+
+# def greet():
+#     name = name_entry.get()
+#     output_label.config(text=f"Hello {name}!")
+
+# tkinter.Button(window, text = 'Greet', command = greet).grid(row=1, column=2)
+
+# text_output = tkinter.Text(window, height=5, width=30)
+# text_output.pack()
+
+# person = tkinter.Entry(window)
+# person.pack()
+
+# def display_message():
+#     my_list = ['Ionel', 'Dorel', 'Cosmin']
+#     text_output.delete('1.0', tkinter.END)
+#     text_output.insert(tkinter.END, 'This is the lise of persons:\n')
+#     for element in my_list:
+#         text_output.insert(tkinter.END, f'{element}\n')
+
+# def add_person():
+#     person_name = person.get()
+#     text_output.insert(tkinter.END, f'{person_name}\n')
+
+# tkinter.Button(window, text='Display', command = display_message).pack()
+# tkinter.Button(window, text='Add Person', command = add_person).pack()
+
+
+# window.mainloop()
+
