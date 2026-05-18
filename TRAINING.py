@@ -1430,8 +1430,8 @@ import tkinter
 
 window = tkinter.Tk()
 window.title('Prima mea interfata bengoasa')
-window.geometry('400x300')
-window.resizable(False, False)
+window.geometry('800x600')
+window.resizable(True, True)
 
 # tkinter.Label(window, text = 'Nume:').pack(side='left')
 # name_entry = tkinter.Entry(window)
@@ -1483,5 +1483,96 @@ window.resizable(False, False)
 # tkinter.Button(window, text='Add Person', command = add_person).pack()
 
 
-# window.mainloop()
+# entry = tkinter.Entry(window)
+# entry.pack()
+
+# listbox = tkinter.Listbox(window)
+# listbox.pack()
+
+# persons = []
+
+# def add_person():
+#     name = entry.get()
+#     if name:
+#         listbox.insert(tkinter.END, name)
+#         entry.delete(0, tkinter.END)
+#         persons.append(name)
+
+# def delete_selected():
+#     selection = listbox.curselection()
+#     if selection:
+#         selected_value = listbox.get(selection[0])
+#         print(f'List after: {persons}')
+#         persons.remove(selected_value)
+#         print(f'List after: {persons}')
+#         listbox.delete(selection[0])
+
+# tkinter.Button(window, text="Add Person", command=add_person).pack()
+# tkinter.Button(window, text="Delete Person", command=delete_selected).pack()
+# root.bind('<Return>', lambda event: btn.invoke())
+import tkinter.messagebox
+from tkinter import *
+
+# entry = tkinter.Entry(window)
+# entry.pack()
+
+# listbox = tkinter.Listbox(window)
+# listbox.pack()
+
+# persons = []
+
+# def add_person():
+#     name = entry.get()
+#     if name:
+#         listbox.insert(tkinter.END, name)
+#         entry.delete(0, tkinter.END)
+#         persons.append(name)
+#         tkinter.messagebox.showinfo("Success!", f"{name} has been added. ")
+#     else:
+#         tkinter.messagebox.showwarning("Warning","Please enter a name! ")
+
+# def delete_selected():
+#     selection = listbox.curselection()
+#     if selection:
+#         selected_value = listbox.get(selection[0])
+#         print(f'List after: {persons}')
+#         persons.remove(selected_value)
+#         print(f'List after: {persons}')
+#         listbox.delete(selection[0])
+#         tkinter.messagebox.showinfo('Success!', f"{selected_value} has been deleted! ")
+#     else:
+#         tkinter.messagebox.showerror("Error!", "Nothing has been selected for deletion! ")
+        
+# tkinter.Button(window, text="Add Person", command=add_person).pack()
+# tkinter.Button(window, text="Delete Person", command=delete_selected).pack()
+
+import tkinter.ttk
+
+# options = ['Python', 'C++', 'C#']
+# var = tkinter.StringVar(window)
+# dropdown = tkinter.ttk.OptionMenu(window, var, options[0], *options,)
+# dropdown.pack()
+
+# def show_selected():
+#     selected = dropdown.get()
+#     print(f'selected language: {selected}')
+
+# tkinter.Button(window, text="Show selected", command=show_selected).pack()
+
+# cap_tabel = ('Name', 'Math', 'English')
+# tree = tkinter.ttk.Treeview(window, columns=cap_tabel, show='headings')
+# tree.pack()
+# # for elem in cap_tabel:
+# #     tree.heading(elem, text=elem)
+
+# tree.heading('Name', text='Nume')
+# tree.heading('Math', text='Math grade')
+# tree.heading('English', text='English grade')
+
+# tree.insert('',tkinter.END, values=('Maria', 10, 9))
+# tree.insert('',tkinter.END, values=('Ionela', 8, 9))
+
+
+
+window.mainloop()
 
